@@ -1,0 +1,44 @@
+{
+  "description": "Swap ads for a lower quality video stream.",
+  "manifest_version": 2,
+  "name": "Twitch Video Adblock",
+  "version": "0.0.1",
+  "icons": {
+    "32": "/icons/ttv-32.png",
+    "48": "/icons/ttv-48.png",
+    "128": "/icons/ttv-128.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/ttv-32.png",
+    "default_title": "Twitch Video Adblock",
+    "default_popup": "popup/index.html"
+  },
+  "options_ui": {
+    "page": "popup/index.html",
+    "chrome_style": false
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "block_rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.twitch.tv/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
