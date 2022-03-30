@@ -2,7 +2,7 @@
   "description": "Swap ads for a lower quality video stream.",
   "manifest_version": 2,
   "name": "Twitch Video Adblock",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icons": {
     "32": "/icons/ttv-32.png",
     "48": "/icons/ttv-48.png",
